@@ -1,11 +1,85 @@
-#timer, #time{
-    display: inline;
-}
 
-#wrap {
-	width: 1265px;
-}
 
+  /*  #container {
+        margin: 120px auto;
+        text-align: center;
+    }*/
+
+    .button {
+        -webkit-transform: rotateX( 35deg );
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        padding: 42px 15px;
+        margin: 0px 10px;
+        background-color: #C91826;
+        color: #fff;
+        font-weight: bold;
+        font-size: 40px;
+        text-decoration: none;
+        text-align: center;
+        text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+
+        border: 1px solid;
+        border-color: #B21522;
+        border-radius: 78px;
+        -moz-border-radius: 78px;
+        -webkit-border-radius: 78px;
+
+        box-shadow: 		inset 0px -4px 5px rgba(255,255,255,0.2),
+                            inset 0px 1px 5px rgba(255,255,255,0.2),
+                            /**/
+                            0px 12px 0px #231F20,
+                            0px 14px 0px #231F20,
+                            0px 16px 0px #231F20,
+                            /**/
+                            0px 8px 5px rgba(0,0,0,0.5);
+
+        -moz-box-shadow: 	inset 0px -4px 5px rgba(255,255,255,0.2),
+                            inset 0px 1px 5px rgba(255,255,255,0.2),
+                            /**/
+                            0px 12px 0px #231F20,
+                            0px 14px 0px #231F20,
+                            0px 16px 0px #231F20,
+                            /**/
+                            0px 8px 5px rgba(0,0,0,0.5);
+
+        -webkit-box-shadow: inset 5px -4px 5px rgba(255,255,255,0.2),
+                            inset 5px 1px 5px rgba(255,255,255,0.2),
+                            /**/
+                            0px 12px 0px #231F20,
+                            0px 14px 0px #231F20,
+                            0px 16px 0px #231F20;
+    }
+
+    .button:hover {
+        background-color: #B21522;
+        color: #e3e3e3;
+    }
+
+    .button:active {
+        top: 8px;
+        box-shadow: 		inset 0px 4px 5px rgba(255,255,255,0.4),
+                            inset 0px -1px 5px rgba(255,255,255,0.2),
+                            /**/
+                            0px 8px 0px #231F20,
+                            /**/
+                            0px 9px 5px rgba(0,0,0,0.5);
+
+        -moz-box-shadow: 	inset 0px 4px 5px rgba(255,255,255,0.4),
+                            inset 0px -1px 5px rgba(255,255,255,0.2),
+                            /**/
+                            0px 8px 0px #231F20,
+                            /**/
+                            0px 9px 5px rgba(0,0,0,0.5);
+
+        -webkit-box-shadow: inset 0px 4px 5px rgba(255,255,255,0.4),
+                            inset 0px -1px 5px rgba(255,255,255,0.2),
+                            /**/
+                            0px 8px 0px #231F20,
+                            /**/
+                            0px 9px 5px rgba(0,0,0,0.5);
+    }
 .left {
 	width: 630px;
 	height: 580px;
@@ -16,35 +90,47 @@
 .right {
 	width: 620px;
 	height: 580px;
-	background-color: grey;
+	background-color: #315181;
 	padding-left: 10px;
     float: right;
 }
 
 #disp
 {
-        background-color: black;
-        font-size: 1.75em;
-        font-weight: bold;
-        color: white;
-        width: 7.65em;
-        font-family: "Courier New";
-        padding: 0.15em;
-        border-right-width:0;
+	background-color: black;
+	font-size: 1.75em;
+	font-weight: bold;
+	color: white;
+	width: 7.65em;
+	font-family: "Courier New";
+	padding: 0.15em;
+	border-right-width:0;
 }
-#butt
+
+#button1
 {
-        font-size: 1em;
-        width: 8em;
-        font-family: "Courier New";
+	font-size: 1em;
+	width: 8em;
+	font-family: "Courier New";
+	border-radius: 5px;
+    border: 1px solid #000;
 }
-#butt2
+
+#button2
 {
-        font-size: 1em;
-        width: 5em;
-        font-family: "Courier New";
+	font-size: 1em;
+	width: 5em;
+	font-family: "Courier New";	
+	border-radius: 5px;
+    border: 1px solid #000;
 }
+
 #lap
 {
-        margin-top: 0.5em;
+	margin-top: 0.5em;
+}
+
+td
+{
+	bgcolor= white;
 }

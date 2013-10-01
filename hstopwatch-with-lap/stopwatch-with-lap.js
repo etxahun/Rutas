@@ -1,5 +1,7 @@
+//var t=[0, 0, 0, 0, 0, 0, 0, 1];
 var t=[0, 0, 0, 0, 0, 0, 0, 1];
-
+var alphaChars = "ABCDEFG";
+var myChar = "A";
 // 0/1 = start/end
 // 2 = state
 // 3 = length, ms
@@ -9,7 +11,54 @@ var t=[0, 0, 0, 0, 0, 0, 0, 1];
 // 7 = lap count
 
 // ss = Start/Stop
+
 function ss() 
+{
+	t[t[2]]=(new Date()).valueOf();
+	t[2]=1-t[2];
+
+	if (0==t[2]) 
+	{
+		clearInterval(t[4]);
+		t[3]+=t[1]-t[0];
+		var ttt = document.getElementById("lap");
+		var a = document.createElement("div");
+        
+		a.id="div1";
+        a.innerHTML+="<table><tr><td width=55 align=center>"+"<b><font color=green>"+myChar+"</font></b>"+"</td><td width=116 align=center>"+format(t[1]-t[0])+"</td><td width=110 align=center>"+
+		"<b>"+format(t[3])+"</b>"+"</td></tr></table>";
+		
+		myChar = incrementLetter(myChar);
+		ttt.appendChild(a);
+		t[4]=t[1]=t[0]=0;
+		disp();
+	} 
+	else
+	{
+		t[4]=setInterval(disp, 43);
+	}
+}
+
+function incrementLetter(letterToIncrement)
+{
+ //find where the letter is at in the alphaChars string
+ var indexOfLetter = alphaChars.search(letterToIncrement);
+
+ //if it's not the last letter, then return the next
+ //letter in the string
+ if (indexOfLetter+1 < alphaChars.length) 
+	{
+	 return(alphaChars.charAt(indexOfLetter+1));
+	}
+
+	//otherwise return the input letter
+ else
+	{
+	 return(letterToIncrement);
+	}
+}
+
+/*function ss() 
 {
 	t[t[2]]=(new Date()).valueOf();
 	t[2]=1-t[2];
@@ -34,6 +83,7 @@ function ss()
 		t[4]=setInterval(disp, 43);
 	}
 }
+*/
 
 // r = Reset
 
@@ -41,7 +91,10 @@ function r()
 {
 	t[4]=t[3]=t[2]=t[1]=t[0]=0;
 	document.getElementById('lap').innerHTML='';
-      	ss();
+      	// Si queremos que trás pulsar RESET se ponga
+		// todo a 0 y empiece automacticamente,
+		// descomentaremos lo siguiente:
+		//ss();
 	disp();
 	t[7]=1;
 }

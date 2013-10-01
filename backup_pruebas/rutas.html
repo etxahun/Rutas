@@ -2,38 +2,45 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="rutas.css"/>
+	<link rel="stylesheet" type="text/css" href="rutas2.css"/>
 	<title>Rutas</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="hstopwatch-with-lap/stopwatch-with-lap.js"></script> 
 </head>
 
-<body onload='stopwatch();'>
+<body>
 <div id="wrap">  
 	<div class="left">
 		<iframe width="630" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.es/maps?saddr=Santa+Eugenia+Kalea&amp;daddr=43.3250231,-3.0068202+to:Carretera+desconocida+to:Artatza+Auzoa+to:43.337382,-3.0099072+to:Las+Arenas-Areeta+Kaia+to:Las+Arenas-Areeta+Kaia+to:M%C3%A1ximo+Aguirre+Kalea+to:43.3231523,-3.0116728+to:43.3243938,-3.0102133+to:Kresaltzu+Kalea&amp;hl=es&amp;ie=UTF8&amp;sll=43.324132,-3.010683&amp;sspn=0.008227,0.01929&amp;geocode=FZ0blQIdahbS_w%3BFV8WlQIdnB7S_ymDMy0TMlpODTHwDxvRAPiPVw%3BFVEelQIdfSzS_w%3BFcoqlQIdo0DS_w%3BFaZGlQIdjRLS_ylFABr90FtODTGz-5_IjexxTA%3BFRBDlQId3RHS_w%3BFS4ZlQIdtvHR_w%3BFdgIlQIdewPS_w%3BFRAPlQIdqAvS_ym1mO66LlpODTE1SWAN3NvonQ%3BFekTlQIdWxHS_ykBwBcxLFpODTHnczJcbNc3Vw%3BFcgalQIdphXS_w&amp;t=h&amp;dirflg=w&amp;mra=dpe&amp;mrsp=9&amp;sz=16&amp;via=1,4,8,9&amp;ll=43.328705,-3.005404&amp;spn=0.017794,0.026994&amp;z=15&amp;output=embed"></iframe><br /><small><a href="https://maps.google.es/maps?saddr=Santa+Eugenia+Kalea&amp;daddr=43.3250231,-3.0068202+to:Carretera+desconocida+to:Artatza+Auzoa+to:43.337382,-3.0099072+to:Las+Arenas-Areeta+Kaia+to:Las+Arenas-Areeta+Kaia+to:M%C3%A1ximo+Aguirre+Kalea+to:43.3231523,-3.0116728+to:43.3243938,-3.0102133+to:Kresaltzu+Kalea&amp;hl=es&amp;ie=UTF8&amp;sll=43.324132,-3.010683&amp;sspn=0.008227,0.01929&amp;geocode=FZ0blQIdahbS_w%3BFV8WlQIdnB7S_ymDMy0TMlpODTHwDxvRAPiPVw%3BFVEelQIdfSzS_w%3BFcoqlQIdo0DS_w%3BFaZGlQIdjRLS_ylFABr90FtODTGz-5_IjexxTA%3BFRBDlQId3RHS_w%3BFS4ZlQIdtvHR_w%3BFdgIlQIdewPS_w%3BFRAPlQIdqAvS_ym1mO66LlpODTE1SWAN3NvonQ%3BFekTlQIdWxHS_ykBwBcxLFpODTHnczJcbNc3Vw%3BFcgalQIdphXS_w&amp;t=h&amp;dirflg=w&amp;mra=dpe&amp;mrsp=9&amp;sz=16&amp;via=1,4,8,9&amp;ll=43.328705,-3.005404&amp;spn=0.017794,0.026994&amp;z=15&amp;source=embed" style="color:#0000FF;text-align:left">Ver mapa más grande</a></small>
 	</div>
 	
 	<div class="right">
-		<br>
-		<div align=center>
-		        <input type='text' id='disp' maxlength=12 readonly><br><br>
-		        <button type='button' onclick='ss()' id='butt'>Start/Stop</button>
-		        <button type='button' onclick='r()' id='butt2'>Reset</button>
+		<h1>Ruta:</h1>
+		<div class="form">
+			<form action="demo_form.asp">
+				<label><b>A. Etxea Inicio: </b></labwl>
+					<input type="text" name="A" value="">
+				<br>
+				<label><b>B. Betiko Ikastola: </b></label>
+					<input type="text" name="B" value="">
+				<br>
+				<label><b>C. Bomberos Leioa: </b></label>
+					<input type="text" name="C" value="">
+				<br>
+				<label><b>D. Playa La Bola: </b></label>
+					<input type="text" name="D" value="">
+				<br>
+				<label><b>E. Txurruka: </b></label>
+					<input type="text" name="E" value="">
+				<br>
+				<label><b>F. Bote: </b></label>
+					<input type="text" name="F" value="">
+				<br>
+				<label><b>G. Etxea Fin: </b></label>
+					<input type="text" name="G" value="">
+				<br>
+				<br/>
+				<input type="submit" value="Submit">
+			</form>
 		</div>
-		<br>
-		<table align=center border=1>
-		        <tr>
-		        	<th width=65>Lap #</th>
-		        	<th width=112>Running Total</th>
-		        	<th width=112>This Lap</th>
-		        </tr>
-				<tr>
-					<td colspan=3>
-						<div align=center id='lap'></div>
-					</td>
-				</tr>
-		</table>
 	</div>
     
 </div>
