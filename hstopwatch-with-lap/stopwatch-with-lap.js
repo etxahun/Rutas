@@ -1,5 +1,14 @@
 var t=[0, 0, 0, 0, 0, 0, 0, 1];
 
+// 0/1 = start/end
+// 2 = state
+// 3 = length, ms
+// 4 = timer
+// 5 = epoch
+// 6 = disp el
+// 7 = lap count
+
+// ss = Start/Stop
 function ss() 
 {
 	t[t[2]]=(new Date()).valueOf();
@@ -25,6 +34,8 @@ function ss()
 		t[4]=setInterval(disp, 43);
 	}
 }
+
+// r = Reset
 
 function r() 
 {
