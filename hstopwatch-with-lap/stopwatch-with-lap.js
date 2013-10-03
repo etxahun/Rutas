@@ -11,7 +11,6 @@ var myChar = "A";
 // 7 = lap count
 
 // ss = Start/Stop
-
 function ss() 
 {
 	t[t[2]]=(new Date()).valueOf();
@@ -29,7 +28,7 @@ function ss()
 			a.id="div1";
 	        a.innerHTML+="<table><tr><td width=55 align=center>"+"<b><font color=#09DF37>"+myChar+"</font></b>"+"</td><td width=116 align=center>"+format(t[1]-t[0])+"</td><td width=110 align=center>"+
 			"<b>"+format(t[3])+"</b>"+"</td></tr></table>";
-			
+
 			ttt.appendChild(a);
 			t[4]=t[1]=t[0]=0;
 			disp();
@@ -38,6 +37,7 @@ function ss()
 			if (myChar=="H")
 				{
 				 alert("Enhorabuena!! Has terminado el recorrido")
+				 $('#basedatos').show();
 				 t[4]=t[3]=t[2]=t[1]=t[0]=0;
 				 disp();
 				 myChar="A";
@@ -76,33 +76,6 @@ function sleep(ms)
 	while (new Date().getTime() < dt.getTime());
 }
 
-/*function ss() 
-{
-	t[t[2]]=(new Date()).valueOf();
-	t[2]=1-t[2];
-
-	if (0==t[2]) 
-	{
-		clearInterval(t[4]);
-		t[3]+=t[1]-t[0];
-		var ttt = document.getElementById("lap");
-		var a = document.createElement("div");
-                a.id="div1";
-                a.innerHTML+="<table><tr><td width=65 align=center>"+
-		'Lap '+(t[7]++)+"</td><td width=116 align=center>"+
-		format(t[3])+"</td><td width=110 align=center>"+
-		format(t[1]-t[0])+"</td></tr></table>";
-		ttt.appendChild(a);
-		t[4]=t[1]=t[0]=0;
-		disp();
-	} 
-	else
-	{
-		t[4]=setInterval(disp, 43);
-	}
-}
-*/
-
 // r = Reset
 
 function r() 
@@ -135,6 +108,7 @@ function format(ms)
 
 function stopwatch() 
 {
+
 	t[5]=new Date(1970, 1, 1, 0, 0, 0, 0).valueOf();
 	t[6]=document.getElementById('disp');
 	disp();

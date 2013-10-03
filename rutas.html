@@ -5,7 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="rutas.css"/>
 	<title>Rutas</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="hstopwatch-with-lap/stopwatch-with-lap.js"></script> 
+	<script type="text/javascript" src="hstopwatch-with-lap/stopwatch-with-lap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() 
+			{
+			 $('#basedatos').hide();
+			});
+	</script>
 </head>
 
 <body onload='stopwatch();'>
@@ -38,8 +44,9 @@
 					</td>
 				</tr>
 		</table>
-		<div id="basedatos">
-				<input type='button' onclick='databaseLoad'>Guardar en BD</button>
+		<br>
+		<div align="center">
+				<input id="basedatos" type='button' onclick='databaseLoad' value="Guardar en BD" />
 		</div>
 	</div>
     
