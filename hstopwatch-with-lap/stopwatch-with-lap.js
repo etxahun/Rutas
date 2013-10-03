@@ -1,6 +1,6 @@
 //var t=[0, 0, 0, 0, 0, 0, 0, 1];
 var t=[0, 0, 0, 0, 0, 0, 0, 1];
-var alphaChars = "ABCDEFG";
+var alphaChars = "ABCDEFGH";
 var myChar = "A";
 // 0/1 = start/end
 // 2 = state
@@ -19,19 +19,30 @@ function ss()
 
 	if (0==t[2]) 
 	{
-		clearInterval(t[4]);
-		t[3]+=t[1]-t[0];
-		var ttt = document.getElementById("lap");
-		var a = document.createElement("div");
-        
-		a.id="div1";
-        a.innerHTML+="<table><tr><td width=55 align=center>"+"<b><font color=green>"+myChar+"</font></b>"+"</td><td width=116 align=center>"+format(t[1]-t[0])+"</td><td width=110 align=center>"+
-		"<b>"+format(t[3])+"</b>"+"</td></tr></table>";
-		
-		myChar = incrementLetter(myChar);
-		ttt.appendChild(a);
-		t[4]=t[1]=t[0]=0;
-		disp();
+		if (myChar=="A"||myChar=="B"||myChar=="C"||myChar=="D"||myChar=="E"||myChar=="F"||myChar=="G")
+		{
+			clearInterval(t[4]);
+			t[3]+=t[1]-t[0];
+			var ttt = document.getElementById("lap");
+			var a = document.createElement("div");
+	        
+			a.id="div1";
+	        a.innerHTML+="<table><tr><td width=55 align=center>"+"<b><font color=#09DF37>"+myChar+"</font></b>"+"</td><td width=116 align=center>"+format(t[1]-t[0])+"</td><td width=110 align=center>"+
+			"<b>"+format(t[3])+"</b>"+"</td></tr></table>";
+			
+			ttt.appendChild(a);
+			t[4]=t[1]=t[0]=0;
+			disp();
+			myChar = incrementLetter(myChar);
+			
+			if (myChar=="H")
+				{
+				 alert("Enhorabuena!! Has terminado el recorrido")
+				 t[4]=t[3]=t[2]=t[1]=t[0]=0;
+				 disp();
+				 myChar="A";
+				}
+		}		
 	} 
 	else
 	{
@@ -56,6 +67,13 @@ function incrementLetter(letterToIncrement)
 	{
 	 return(letterToIncrement);
 	}
+}
+
+function sleep(ms)
+{
+	var dt = new Date();
+	dt.setTime(dt.getTime() + ms);
+	while (new Date().getTime() < dt.getTime());
 }
 
 /*function ss() 
