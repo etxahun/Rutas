@@ -10,13 +10,45 @@
 		$(document).ready(function() 
 			{
 			 $('#basedatos').hide();
+			 date_time('date_time');
+			 
+			 function date_time(id)
+				{
+				 date = new Date;
+				 year = date.getFullYear();
+				 month = date.getMonth();
+				 months = new Array('Enero', 'Febrero', 'MArzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosts', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
+				 d = date.getDate();
+				 day = date.getDay();
+				 days = new Array('Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado');
+				 h = date.getHours();
+				 if(h<10)
+				 { 
+						h = "0"+h;
+				 }
+				 m = date.getMinutes();
+				 if(m<10)
+				 {
+						m = "0"+m;
+				 }
+				 s = date.getSeconds();
+				 if(s<10)
+				 { 
+						s = "0"+s;
+				 }
+				 //result = ''+days[day]+' '+months[month]+' '+d+' '+year+' '+h+':'+m+':'+s;
+				 result = '<b>'+''+days[day]+' '+d+' '+'de'+' '+months[month]+' '+'de'+' '+year+' '+h+':'+m+':'+s+'</b>';
+
+				 document.getElementById(id).innerHTML = result;
+				 setTimeout('date_time("'+id+'");','1000');
+				 return true;
+				}
 			});
 	</script>
 </head>
 
 <body onload='stopwatch();'>
 <div id="wrap">
-  
 	<div class="left">
 		<iframe width="630" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
 		src="https://maps.google.es/maps?saddr=Santa+Eugenia+Kalea&amp;daddr=43.3250231,-3.0068202+to:Carretera+desconocida+to:Artatza+Auzoa+to:43.337382,-3.0099072+to:Las+Arenas-Areeta+Kaia+to:Las+Arenas-Areeta+Kaia+to:M%C3%A1ximo+Aguirre+Kalea+to:43.3231523,-3.0116728+to:43.3243938,-3.0102133+to:Kresaltzu+Kalea&amp;hl=es&amp;ie=UTF8&amp;sll=43.324132,-3.010683&amp;sspn=0.008227,0.01929&amp;geocode=FZ0blQIdahbS_w%3BFV8WlQIdnB7S_ymDMy0TMlpODTHwDxvRAPiPVw%3BFVEelQIdfSzS_w%3BFcoqlQIdo0DS_w%3BFaZGlQIdjRLS_ylFABr90FtODTGz-5_IjexxTA%3BFRBDlQId3RHS_w%3BFS4ZlQIdtvHR_w%3BFdgIlQIdewPS_w%3BFRAPlQIdqAvS_ym1mO66LlpODTE1SWAN3NvonQ%3BFekTlQIdWxHS_ykBwBcxLFpODTHnczJcbNc3Vw%3BFcgalQIdphXS_w&amp;t=h&amp;dirflg=w&amp;mra=dpe&amp;mrsp=9&amp;sz=16&amp;via=1,4,8,9&amp;ll=43.328705,-3.005404&amp;spn=0.017794,0.026994&amp;z=15&amp;output=embed"></iframe><br /><small><a href="https://maps.google.es/maps?saddr=Santa+Eugenia+Kalea&amp;daddr=43.3250231,-3.0068202+to:Carretera+desconocida+to:Artatza+Auzoa+to:43.337382,-3.0099072+to:Las+Arenas-Areeta+Kaia+to:Las+Arenas-Areeta+Kaia+to:M%C3%A1ximo+Aguirre+Kalea+to:43.3231523,-3.0116728+to:43.3243938,-3.0102133+to:Kresaltzu+Kalea&amp;hl=es&amp;ie=UTF8&amp;sll=43.324132,-3.010683&amp;sspn=0.008227,0.01929&amp;geocode=FZ0blQIdahbS_w%3BFV8WlQIdnB7S_ymDMy0TMlpODTHwDxvRAPiPVw%3BFVEelQIdfSzS_w%3BFcoqlQIdo0DS_w%3BFaZGlQIdjRLS_ylFABr90FtODTGz-5_IjexxTA%3BFRBDlQId3RHS_w%3BFS4ZlQIdtvHR_w%3BFdgIlQIdewPS_w%3BFRAPlQIdqAvS_ym1mO66LlpODTE1SWAN3NvonQ%3BFekTlQIdWxHS_ykBwBcxLFpODTHnczJcbNc3Vw%3BFcgalQIdphXS_w&amp;t=h&amp;dirflg=w&amp;mra=dpe&amp;mrsp=9&amp;sz=16&amp;via=1,4,8,9&amp;ll=43.328705,-3.005404&amp;spn=0.017794,0.026994&amp;z=15&amp;source=embed" 
@@ -24,6 +56,9 @@
 	</div>
 	
 	<div class="right" id='container'>
+		<br>
+		<span id="date_time"></span>
+		<br>
 		<br>
 		<div align=center>
 		        <input type='text' id='disp' maxlength=12 readonly><br><br>
@@ -46,7 +81,7 @@
 		</table>
 		<br>
 		<div align="center">
-				<input id="basedatos" type='button' onclick='databaseLoad' value="Guardar en BD" />
+				<input id="basedatos" type='button' onclick='cargadatosdb()' value="Guardar en BD" />
 		</div>
 	</div>
     

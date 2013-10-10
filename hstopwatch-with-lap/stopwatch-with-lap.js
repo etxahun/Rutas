@@ -2,6 +2,10 @@
 var t=[0, 0, 0, 0, 0, 0, 0, 1];
 var alphaChars = "ABCDEFGH";
 var myChar = "A";
+
+var db=[];
+var p=0;
+
 // 0/1 = start/end
 // 2 = state
 // 3 = length, ms
@@ -9,6 +13,8 @@ var myChar = "A";
 // 5 = epoch
 // 6 = disp el
 // 7 = lap count
+
+
 
 // ss = Start/Stop
 function ss() 
@@ -28,8 +34,12 @@ function ss()
 			a.id="div1";
 	        a.innerHTML+="<table><tr><td width=55 align=center>"+"<b><font color=#09DF37>"+myChar+"</font></b>"+"</td><td width=116 align=center>"+format(t[1]-t[0])+"</td><td width=110 align=center>"+
 			"<b>"+format(t[3])+"</b>"+"</td></tr></table>";
-
+			
+			// Vamos almacenando cada uno de los 7 (A-G) tiempos
+			db[p]=format(t[1]-t[0]);
+			p++;
 			ttt.appendChild(a);
+			
 			t[4]=t[1]=t[0]=0;
 			disp();
 			myChar = incrementLetter(myChar);
@@ -50,6 +60,26 @@ function ss()
 	}
 }
 
+/*function cargadatosdb() {
+	var data = db.serializeArray();
+
+	// setup the ajax request
+	$.ajax({
+		type: 'POST',
+		url: 'cargadb.php',
+		data: data,
+		success: function() {
+				alert('Se han subido los datos de la BBDD.');
+			}
+		});
+	}*/
+	
+function cargadatosdb() {
+	//alert(db);
+	$.post('cargadb.php', {elements: db});
+}
+	
+	
 function incrementLetter(letterToIncrement)
 {
  //find where the letter is at in the alphaChars string
