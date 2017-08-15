@@ -2,7 +2,7 @@
 	$arrtiempos = $_POST['elements'];
 	$posiciones = array("A","B","C","D","E","F","G");
 	$a=0;
-	$con=mysql_connect("localhost", "root", "nextel");
+	$con=mysql_connect("localhost", "root", "<pass>");
 	if(!$con)
 		{
 		 die("Can not connect to server:".mysql_error());
